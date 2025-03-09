@@ -1,0 +1,23 @@
+package com.example.helloworldapp
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val inputField: EditText = findViewById(R.id.inputField)
+        val processButton: Button = findViewById(R.id.processButton)
+        val resultText: TextView = findViewById(R.id.resultText)
+
+        processButton.setOnClickListener {
+            val enteredText = inputField.text.toString()
+            resultText.text = "Hello, $enteredText"
+        }
+    }
+}
